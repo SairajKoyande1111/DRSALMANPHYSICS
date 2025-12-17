@@ -517,31 +517,31 @@ export default function Home() {
             </motion.div>
           </div>
 
-          {/* Vision Cards */}
+          {/* Vision Cards with Images */}
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
               { 
                 title: "Innovation-Driven", 
                 desc: "Fostering creative problem-solving through hands-on STEM projects and real-world engineering challenges.",
-                icon: Sparkles,
+                image: f1Image,
                 number: "01"
               },
               { 
                 title: "Global Excellence", 
                 desc: "Preparing students to compete and succeed at international competition levels with world-class coaching.",
-                icon: Rocket,
+                image: labImage,
                 number: "02"
               },
               { 
                 title: "Practical Learning", 
                 desc: "Combining theoretical knowledge with engineering application to create lasting, tangible skills.",
-                icon: BrainCircuit,
+                image: mentorImage,
                 number: "03"
               },
               { 
                 title: "Sustainable Future", 
                 desc: "Developing environmentally conscious engineers who build solutions for tomorrow's challenges.",
-                icon: Leaf,
+                image: imgRocketSunrise,
                 number: "04"
               }
             ].map((item, idx) => (
@@ -552,22 +552,25 @@ export default function Home() {
                 viewport={{ once: true }}
                 transition={{ delay: idx * 0.1, duration: 0.8, ease: "easeOut" }}
               >
-                <div className="h-full relative group">
-                  <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10" />
-                  <Card className="h-full border border-slate-200 dark:border-slate-700 shadow-md hover:shadow-xl transition-all duration-500 group-hover:border-primary hover:-translate-y-1 bg-white dark:bg-slate-800">
-                    <CardHeader>
-                      <div className="flex items-start justify-between mb-4">
-                        <div className="p-3 bg-primary/10 rounded-lg group-hover:bg-primary/20 transition-colors duration-300">
-                          <item.icon className="w-7 h-7 text-primary" />
-                        </div>
-                        <span className="text-3xl font-black text-primary/20 group-hover:text-primary/40 transition-colors duration-300">{item.number}</span>
-                      </div>
-                      <CardTitle className="text-xl font-bold text-black dark:text-white group-hover:text-primary transition-colors duration-300">{item.title}</CardTitle>
-                    </CardHeader>
-                    <CardContent>
-                      <p className="text-foreground/70 font-medium leading-relaxed text-sm">{item.desc}</p>
-                    </CardContent>
-                  </Card>
+                <div className="h-full relative group rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-500">
+                  {/* Background Image */}
+                  <img 
+                    src={item.image} 
+                    alt={item.title}
+                    className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                  
+                  {/* Dark Overlay Gradient */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-black/20 group-hover:via-black/60 transition-all duration-500" />
+                  
+                  {/* Content */}
+                  <div className="relative h-full p-6 flex flex-col justify-end">
+                    <div className="mb-3">
+                      <span className="text-sm font-bold text-secondary/80 tracking-widest">{item.number}</span>
+                    </div>
+                    <h3 className="text-xl font-bold text-white mb-2 group-hover:text-secondary transition-colors duration-300">{item.title}</h3>
+                    <p className="text-white/80 text-sm leading-relaxed group-hover:text-white transition-colors duration-300">{item.desc}</p>
+                  </div>
                 </div>
               </motion.div>
             ))}
