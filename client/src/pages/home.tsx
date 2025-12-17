@@ -198,7 +198,7 @@ export default function Home() {
       </section>
 
       {/* About Section */}
-      <section id="about" className="pt-0 pb-24 bg-gradient-to-b from-white to-slate-50 dark:from-slate-950 dark:to-slate-900">
+      <section id="about" className="pt-0 pb-12 bg-white dark:bg-white">
         <div className="container mx-auto px-6">
 
           <div className="grid lg:grid-cols-12 gap-12 items-start">
@@ -383,14 +383,14 @@ export default function Home() {
       </section>
 
       {/* Expertise Cards - Professional Design */}
-      <section id="expertise" className="py-24 bg-slate-50 dark:bg-slate-900/50">
+      <section id="expertise" className="py-12 bg-white dark:bg-white">
         <div className="container mx-auto px-6">
           <div className="text-center max-w-3xl mx-auto mb-20">
             <motion.h2 
               initial={{ opacity: 0, y: -20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-5xl lg:text-6xl font-black font-heading mb-6 text-black dark:text-white"
+              className="text-3xl lg:text-4xl font-bold font-heading mb-6 text-black dark:text-white"
             >
               Areas of <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">Expertise</span>
             </motion.h2>
