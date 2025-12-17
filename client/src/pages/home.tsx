@@ -382,14 +382,27 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Expertise Cards */}
-      <section id="expertise" className="py-24">
+      {/* Expertise Cards - Professional Design */}
+      <section id="expertise" className="py-24 bg-slate-50 dark:bg-slate-900/50">
         <div className="container mx-auto px-6">
-          <div className="text-center max-w-3xl mx-auto mb-16">
-            <h2 className="text-4xl font-bold font-heading mb-4">Areas of Expertise</h2>
-            <p className="text-muted-foreground text-lg">
+          <div className="text-center max-w-3xl mx-auto mb-20">
+            <motion.h2 
+              initial={{ opacity: 0, y: -20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="text-5xl lg:text-6xl font-black font-heading mb-6 text-black dark:text-white"
+            >
+              Areas of <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">Expertise</span>
+            </motion.h2>
+            <motion.p 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.1 }}
+              className="text-lg md:text-xl font-semibold text-foreground leading-relaxed"
+            >
               Combining theoretical physics with engineering excellence to create holistic learning experiences.
-            </p>
+            </motion.p>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -397,38 +410,32 @@ export default function Home() {
               { 
                 icon: Atom, 
                 title: "Physics Teaching", 
-                desc: "Concept-based learning focusing on core principles and real-world applications.",
-                color: "bg-blue-50 text-blue-600"
+                desc: "Concept-based learning focusing on core principles and real-world applications."
               },
               { 
                 icon: Users, 
                 title: "STEM Mentorship", 
-                desc: "Guiding students through engineering challenges and innovation projects.",
-                color: "bg-green-50 text-green-600"
+                desc: "Guiding students through engineering challenges and innovation projects."
               },
               { 
                 icon: Wind, 
                 title: "F1 in Schools", 
-                desc: "Leadership in aerodynamics, design, and team management for global competitions.",
-                color: "bg-amber-50 text-amber-600"
+                desc: "Leadership in aerodynamics, design, and team management for global competitions."
               },
               { 
                 icon: Cpu, 
                 title: "RC Car Engineering", 
-                desc: "Hands-on design, coding, and optimization of remote-controlled vehicles.",
-                color: "bg-purple-50 text-purple-600"
+                desc: "Hands-on design, coding, and optimization of remote-controlled vehicles."
               },
               { 
                 icon: BookOpen, 
                 title: "Career Counseling", 
-                desc: "Strategic guidance for students aiming for top engineering and science universities.",
-                color: "bg-rose-50 text-rose-600"
+                desc: "Strategic guidance for students aiming for top engineering and science universities."
               },
               { 
                 icon: Trophy, 
                 title: "Competition Prep", 
-                desc: "Rigorous training for National & World level STEM championships.",
-                color: "bg-indigo-50 text-indigo-600"
+                desc: "Rigorous training for National & World level STEM championships."
               }
             ].map((item, idx) => (
               <motion.div
@@ -438,17 +445,22 @@ export default function Home() {
                 viewport={{ once: true }}
                 transition={{ delay: idx * 0.1, duration: 0.8, ease: "easeOut" }}
               >
-                <Card className="h-full hover:shadow-xl transition-all border-none shadow-sm bg-card hover:-translate-y-2 duration-500">
-                  <CardHeader>
-                    <div className={`w-12 h-12 ${item.color} rounded-xl flex items-center justify-center mb-4 transition-transform duration-500 hover:rotate-12`}>
-                      <item.icon className="w-6 h-6" />
-                    </div>
-                    <CardTitle className="text-xl">{item.title}</CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-muted-foreground">{item.desc}</p>
-                  </CardContent>
-                </Card>
+                <div className="h-full relative group">
+                  <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10" />
+                  <Card className="h-full border-l-4 border-l-primary shadow-lg hover:shadow-2xl transition-all duration-500 group-hover:border-l-secondary hover:-translate-y-1 bg-white dark:bg-slate-800 border-0">
+                    <CardHeader>
+                      <div className="flex items-start justify-between mb-4">
+                        <div className="p-3 bg-primary/10 rounded-lg group-hover:bg-primary/20 transition-colors duration-300">
+                          <item.icon className="w-8 h-8 text-primary" />
+                        </div>
+                      </div>
+                      <CardTitle className="text-2xl font-black text-black dark:text-white group-hover:text-primary transition-colors duration-300">{item.title}</CardTitle>
+                    </CardHeader>
+                    <CardContent>
+                      <p className="text-foreground/75 font-medium leading-relaxed text-base">{item.desc}</p>
+                    </CardContent>
+                  </Card>
+                </div>
               </motion.div>
             ))}
           </div>
