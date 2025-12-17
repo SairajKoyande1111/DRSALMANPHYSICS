@@ -200,121 +200,138 @@ export default function Home() {
       {/* About Section */}
       <section id="about" className="py-24 bg-white dark:bg-slate-950">
         <div className="container mx-auto px-6">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            {/* Left Content */}
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            {/* Left - Professional Photo */}
             <motion.div 
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              variants={staggerContainer}
-              className="space-y-8"
-            >
-              <motion.div variants={fadeIn} className="space-y-4">
-                <h2 className="text-5xl md:text-6xl font-black font-heading leading-[1.1]">
-                  Transforming{" "}
-                  <span className="text-secondary">Curious Minds</span> with{" "}
-                  <span className="text-primary">Strategy,</span>
-                </h2>
-                <h2 className="text-5xl md:text-6xl font-black font-heading leading-[1.1]">
-                  <span className="text-primary">Experience</span> &{" "}
-                  <span className="text-secondary">Purpose</span>
-                </h2>
-              </motion.div>
-
-              <motion.div variants={fadeIn} className="h-1 w-24 bg-secondary rounded-full" />
-              
-              <motion.div variants={fadeIn} className="space-y-4 text-lg text-muted-foreground leading-relaxed">
-                <p>
-                  After successfully guiding students to championship victories and global recognition, I've transitioned into a transformational educator and mentor—helping professionals and students think strategically, build sustainably, and unlock their next level of growth.
-                </p>
-                <p>
-                  My proven frameworks and cross-category expertise, combined with over 30 years of practical experience in STEM education and competition coaching, bring insights from startups to established institutions.
-                </p>
-              </motion.div>
-
-              {/* Role Badges */}
-              <motion.div variants={fadeIn} className="grid grid-cols-2 gap-6 pt-4">
-                <div className="p-4 rounded-xl bg-primary/5 border border-primary/10 hover:border-primary/30 transition-colors hover-elevate">
-                  <div className="flex items-center gap-3 mb-2">
-                    <div className="p-2 bg-primary/20 rounded-lg text-primary">
-                      <Trophy className="w-5 h-5" />
-                    </div>
-                    <span className="font-bold text-foreground">Championship Coach</span>
-                  </div>
-                  <p className="text-xs text-muted-foreground">F1 in Schools Global Recognition</p>
-                </div>
-                
-                <div className="p-4 rounded-xl bg-primary/5 border border-primary/10 hover:border-primary/30 transition-colors hover-elevate">
-                  <div className="flex items-center gap-3 mb-2">
-                    <div className="p-2 bg-primary/20 rounded-lg text-primary">
-                      <Users className="w-5 h-5" />
-                    </div>
-                    <span className="font-bold text-foreground">STEM Mentor</span>
-                  </div>
-                  <p className="text-xs text-muted-foreground">Physics Educator & Lab Developer</p>
-                </div>
-                
-                <div className="p-4 rounded-xl bg-secondary/5 border border-secondary/10 hover:border-secondary/30 transition-colors hover-elevate">
-                  <div className="flex items-center gap-3 mb-2">
-                    <div className="p-2 bg-secondary/20 rounded-lg text-secondary">
-                      <Rocket className="w-5 h-5" />
-                    </div>
-                    <span className="font-bold text-foreground">Innovation Leader</span>
-                  </div>
-                  <p className="text-xs text-muted-foreground">Engineering Challenge Designer</p>
-                </div>
-                
-                <div className="p-4 rounded-xl bg-secondary/5 border border-secondary/10 hover:border-secondary/30 transition-colors hover-elevate">
-                  <div className="flex items-center gap-3 mb-2">
-                    <div className="p-2 bg-secondary/20 rounded-lg text-secondary">
-                      <BrainCircuit className="w-5 h-5" />
-                    </div>
-                    <span className="font-bold text-foreground">Career Counselor</span>
-                  </div>
-                  <p className="text-xs text-muted-foreground">Strategic Growth Guidance</p>
-                </div>
-              </motion.div>
-            </motion.div>
-
-            {/* Right - Professional Photo */}
-            <motion.div 
-              initial={{ opacity: 0, scale: 0.95 }}
-              whileInView={{ opacity: 1, scale: 1 }}
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 1.0, ease: "easeOut" }}
-              className="flex flex-col items-center justify-center"
+              className="flex flex-col items-center justify-center order-2 lg:order-1"
             >
-              {/* Photo with Gold Border */}
-              <div className="relative w-full max-w-md">
-                <div className="absolute inset-0 bg-gradient-to-br from-secondary/40 to-secondary/20 rounded-3xl blur-2xl" />
-                <div className="relative p-1 bg-gradient-to-br from-secondary via-secondary/80 to-secondary/60 rounded-3xl shadow-2xl">
-                  <div className="relative rounded-3xl overflow-hidden bg-white dark:bg-slate-900 p-3">
-                    <img 
-                      src={salmanPhoto} 
-                      alt="Salman Sir" 
-                      className="w-full aspect-square object-cover rounded-2xl shadow-lg" 
-                    />
+              {/* Photo with Premium Border */}
+              <div className="relative w-full">
+                <div className="relative rounded-2xl overflow-hidden shadow-2xl">
+                  <img 
+                    src={salmanPhoto} 
+                    alt="Salman Sir" 
+                    className="w-full object-cover rounded-2xl" 
+                  />
+                  <div className="absolute inset-0 rounded-2xl border-4 border-secondary/60" />
+                </div>
+                
+                {/* Decorative accent */}
+                <div className="absolute -bottom-4 -right-4 w-32 h-32 bg-secondary/10 rounded-full blur-3xl pointer-events-none" />
+              </div>
+            </motion.div>
+
+            {/* Right Content */}
+            <motion.div 
+              initial={{ opacity: 0, x: 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 1.0, ease: "easeOut" }}
+              className="space-y-8 order-1 lg:order-2"
+            >
+              <motion.div 
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.1 }}
+                className="space-y-4"
+              >
+                <h2 className="text-5xl lg:text-6xl font-black font-heading leading-[1.2]">
+                  About{" "}
+                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">
+                    Salman Sir
+                  </span>
+                </h2>
+                <div className="h-1.5 w-32 bg-gradient-to-r from-primary to-secondary rounded-full" />
+              </motion.div>
+
+              <motion.div 
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.2 }}
+                className="space-y-6 text-lg text-foreground leading-relaxed"
+              >
+                <p className="font-bold text-xl">
+                  I am a passionate Physics teacher at JSS International School, Dubai, and the F1 in Schools Club Incharge with championship-winning expertise.
+                </p>
+                <p>
+                  My journey is defined by a commitment to practical learning and hands-on STEM education. As a mentor, I believe in moving beyond textbooks—guiding students through complex engineering challenges, coding aerodynamic simulations, and competing on global stages.
+                </p>
+                <p>
+                  With a track record of global recognition and award-winning achievements, I combine proven frameworks with cross-category expertise to unlock the next level of growth in every student.
+                </p>
+              </motion.div>
+
+              {/* Professional Credentials */}
+              <motion.div 
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.3 }}
+                className="space-y-4 pt-4"
+              >
+                <h3 className="text-xl font-bold text-foreground">Key Expertise:</h3>
+                <div className="grid grid-cols-1 gap-3">
+                  <div className="flex items-start gap-3">
+                    <div className="mt-1 p-1.5 bg-primary/20 rounded-full text-primary flex-shrink-0">
+                      <Trophy className="w-4 h-4" />
+                    </div>
+                    <div>
+                      <p className="font-bold text-foreground">Championship Coach & Global Mentor</p>
+                      <p className="text-sm text-muted-foreground">F1 in Schools World Recognition</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <div className="mt-1 p-1.5 bg-primary/20 rounded-full text-primary flex-shrink-0">
+                      <Atom className="w-4 h-4" />
+                    </div>
+                    <div>
+                      <p className="font-bold text-foreground">Physics & STEM Education</p>
+                      <p className="text-sm text-muted-foreground">Concept-based Learning & Innovation</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <div className="mt-1 p-1.5 bg-secondary/20 rounded-full text-secondary flex-shrink-0">
+                      <Wind className="w-4 h-4" />
+                    </div>
+                    <div>
+                      <p className="font-bold text-foreground">Aerodynamics & Engineering Design</p>
+                      <p className="text-sm text-muted-foreground">RC Car & F1 Technical Excellence</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <div className="mt-1 p-1.5 bg-secondary/20 rounded-full text-secondary flex-shrink-0">
+                      <Users className="w-4 h-4" />
+                    </div>
+                    <div>
+                      <p className="font-bold text-foreground">Career Counseling & Strategy</p>
+                      <p className="text-sm text-muted-foreground">Growth & University Placement Guidance</p>
+                    </div>
                   </div>
                 </div>
-
-                {/* Decorative Elements */}
-                <div className="absolute -top-8 -right-8 w-24 h-24 bg-primary/10 rounded-full blur-3xl" />
-                <div className="absolute -bottom-8 -left-8 w-24 h-24 bg-secondary/10 rounded-full blur-3xl" />
-              </div>
+              </motion.div>
 
               {/* Social Media Icons */}
               <motion.div 
-                variants={fadeIn}
-                className="flex gap-6 mt-12 justify-center"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.4 }}
+                className="flex gap-4 pt-4"
               >
-                <a href="#" className="p-3 rounded-full border-2 border-secondary/30 text-secondary hover:border-secondary hover:bg-secondary/10 transition-all duration-300 hover-elevate">
-                  <Instagram className="w-6 h-6" />
+                <a href="#" data-testid="link-instagram" className="p-3 rounded-full border-2 border-secondary text-secondary hover:bg-secondary hover:text-white transition-all duration-300 hover-elevate font-bold">
+                  <Instagram className="w-5 h-5" />
                 </a>
-                <a href="#" className="p-3 rounded-full border-2 border-secondary/30 text-secondary hover:border-secondary hover:bg-secondary/10 transition-all duration-300 hover-elevate">
-                  <Youtube className="w-6 h-6" />
+                <a href="#" data-testid="link-youtube" className="p-3 rounded-full border-2 border-secondary text-secondary hover:bg-secondary hover:text-white transition-all duration-300 hover-elevate font-bold">
+                  <Youtube className="w-5 h-5" />
                 </a>
-                <a href="#" className="p-3 rounded-full border-2 border-secondary/30 text-secondary hover:border-secondary hover:bg-secondary/10 transition-all duration-300 hover-elevate">
-                  <Linkedin className="w-6 h-6" />
+                <a href="#" data-testid="link-linkedin" className="p-3 rounded-full border-2 border-secondary text-secondary hover:bg-secondary hover:text-white transition-all duration-300 hover-elevate font-bold">
+                  <Linkedin className="w-5 h-5" />
                 </a>
               </motion.div>
             </motion.div>
