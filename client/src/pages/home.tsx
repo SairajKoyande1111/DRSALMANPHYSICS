@@ -487,71 +487,87 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Inspirational Technology Section - NEW */}
-      <section id="vision" className="py-24 bg-zinc-950 text-white overflow-hidden">
+      {/* Vision Section - Premium Professional Design */}
+      <section id="vision" className="py-12 bg-white dark:bg-white">
         <div className="container mx-auto px-6">
-          <div className="text-center mb-16">
+          {/* Header */}
+          <div className="text-center max-w-3xl mx-auto mb-16">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
             >
-              <Badge variant="outline" className="border-secondary text-secondary mb-4 px-4 py-1">Future Vision</Badge>
-              <h2 className="text-4xl md:text-5xl font-bold font-heading mb-6">
-                Inspiring the <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-primary">Next Generation</span>
-              </h2>
-              <p className="text-zinc-400 text-lg max-w-2xl mx-auto">
-                Bridging the gap between imagination and reality through advanced technology, mentorship, and boundless curiosity.
-              </p>
+              <motion.h2 
+                initial={{ opacity: 0, y: -20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                className="text-3xl lg:text-4xl font-bold font-heading mb-6 text-black dark:text-white"
+              >
+                Our <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">Vision</span>
+              </motion.h2>
+              <motion.p 
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.1 }}
+                className="text-lg md:text-xl font-semibold text-foreground leading-relaxed"
+              >
+                Empowering students to become innovative leaders who bridge scientific knowledge with practical engineering excellence on a global stage.
+              </motion.p>
             </motion.div>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-8">
+          {/* Vision Cards */}
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
               { 
-                img: imgHologram, 
-                title: "Interactive Learning", 
-                desc: "Touching the fabric of the universe through immersive simulation.",
-                icon: Sparkles
+                title: "Innovation-Driven", 
+                desc: "Fostering creative problem-solving through hands-on STEM projects and real-world engineering challenges.",
+                icon: Sparkles,
+                number: "01"
               },
               { 
-                img: imgRocketSunrise, 
-                title: "Limitless Ambition", 
-                desc: "Sky is not the limit, it's just the beginning of our journey.",
-                icon: Rocket
+                title: "Global Excellence", 
+                desc: "Preparing students to compete and succeed at international competition levels with world-class coaching.",
+                icon: Rocket,
+                number: "02"
               },
               { 
-                img: imgQuantum, 
-                title: "Quantum Innovation", 
-                desc: "Preparing students for a future powered by advanced computing.",
-                icon: BrainCircuit
+                title: "Practical Learning", 
+                desc: "Combining theoretical knowledge with engineering application to create lasting, tangible skills.",
+                icon: BrainCircuit,
+                number: "03"
               },
               { 
-                img: imgRobotPlant, 
-                title: "Sustainable Tech", 
-                desc: "Harmonizing engineering with nature for a better tomorrow.",
-                icon: Leaf
+                title: "Sustainable Future", 
+                desc: "Developing environmentally conscious engineers who build solutions for tomorrow's challenges.",
+                icon: Leaf,
+                number: "04"
               }
             ].map((item, idx) => (
-              <motion.div 
+              <motion.div
                 key={idx}
-                initial={{ opacity: 0, scale: 0.95 }}
-                whileInView={{ opacity: 1, scale: 1 }}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: idx * 0.1, duration: 0.8 }}
-                className="group relative rounded-3xl overflow-hidden aspect-video shadow-2xl"
+                transition={{ delay: idx * 0.1, duration: 0.8, ease: "easeOut" }}
               >
-                <img src={item.img} alt={item.title} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 opacity-80 group-hover:opacity-100" />
-                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent flex flex-col justify-end p-8">
-                  <div className="flex items-center gap-3 mb-2 translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
-                    <div className="p-2 bg-secondary/20 rounded-lg backdrop-blur-md">
-                      <item.icon className="w-6 h-6 text-secondary" />
-                    </div>
-                    <h3 className="text-2xl font-bold font-heading text-white">{item.title}</h3>
-                  </div>
-                  <p className="text-zinc-300 translate-y-4 group-hover:translate-y-0 transition-transform duration-500 delay-75 opacity-0 group-hover:opacity-100">
-                    {item.desc}
-                  </p>
+                <div className="h-full relative group">
+                  <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10" />
+                  <Card className="h-full border border-slate-200 dark:border-slate-700 shadow-md hover:shadow-xl transition-all duration-500 group-hover:border-primary hover:-translate-y-1 bg-white dark:bg-slate-800">
+                    <CardHeader>
+                      <div className="flex items-start justify-between mb-4">
+                        <div className="p-3 bg-primary/10 rounded-lg group-hover:bg-primary/20 transition-colors duration-300">
+                          <item.icon className="w-7 h-7 text-primary" />
+                        </div>
+                        <span className="text-3xl font-black text-primary/20 group-hover:text-primary/40 transition-colors duration-300">{item.number}</span>
+                      </div>
+                      <CardTitle className="text-xl font-bold text-black dark:text-white group-hover:text-primary transition-colors duration-300">{item.title}</CardTitle>
+                    </CardHeader>
+                    <CardContent>
+                      <p className="text-foreground/70 font-medium leading-relaxed text-sm">{item.desc}</p>
+                    </CardContent>
+                  </Card>
                 </div>
               </motion.div>
             ))}
