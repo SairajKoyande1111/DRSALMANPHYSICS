@@ -198,72 +198,124 @@ export default function Home() {
       </section>
 
       {/* About Section */}
-      <section id="about" className="py-24 bg-muted/30">
+      <section id="about" className="py-24 bg-white dark:bg-slate-950">
         <div className="container mx-auto px-6">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <motion.div 
-              initial={{ opacity: 0, scale: 0.95 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 1.0, ease: "easeOut" }}
-              className="relative rounded-2xl overflow-hidden shadow-xl group"
-            >
-              <img src={labImage} alt="STEM Lab" className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex flex-col justify-end p-8 text-white">
-                <blockquote className="font-heading text-2xl italic font-light">
-                  "Believe in yourself and all that you are. Know that there is something inside you that is greater than any obstacle."
-                </blockquote>
-              </div>
-            </motion.div>
-
+            {/* Left Content */}
             <motion.div 
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true }}
               variants={staggerContainer}
-              className="space-y-6"
+              className="space-y-8"
             >
-              <motion.h2 variants={fadeIn} className="text-4xl font-bold font-heading">
-                About Salman Sir
-              </motion.h2>
-              <motion.div variants={fadeIn} className="h-1 w-20 bg-secondary rounded-full" />
+              <motion.div variants={fadeIn} className="space-y-4">
+                <h2 className="text-5xl md:text-6xl font-black font-heading leading-[1.1]">
+                  Transforming{" "}
+                  <span className="text-secondary">Curious Minds</span> with{" "}
+                  <span className="text-primary">Strategy,</span>
+                </h2>
+                <h2 className="text-5xl md:text-6xl font-black font-heading leading-[1.1]">
+                  <span className="text-primary">Experience</span> &{" "}
+                  <span className="text-secondary">Purpose</span>
+                </h2>
+              </motion.div>
+
+              <motion.div variants={fadeIn} className="h-1 w-24 bg-secondary rounded-full" />
               
-              <motion.div variants={fadeIn} className="space-y-4 text-lg text-muted-foreground">
+              <motion.div variants={fadeIn} className="space-y-4 text-lg text-muted-foreground leading-relaxed">
                 <p>
-                  I am a passionate Physics teacher at JSS International School, Dubai, and the F1 in Schools Club Incharge. 
-                  My journey is defined by a commitment to practical learning and hands-on STEM education.
+                  After successfully guiding students to championship victories and global recognition, I've transitioned into a transformational educator and mentor—helping professionals and students think strategically, build sustainably, and unlock their next level of growth.
                 </p>
                 <p>
-                  As a mentor, I believe in moving beyond textbooks. I guide students through complex engineering challenges, 
-                  coding aerodynamic simulations, and competing on global stages.
+                  My proven frameworks and cross-category expertise, combined with over 30 years of practical experience in STEM education and competition coaching, bring insights from startups to established institutions.
                 </p>
               </motion.div>
 
-              <motion.div variants={fadeIn} className="grid grid-cols-2 gap-4 pt-4">
-                <div className="flex items-center gap-3">
-                  <div className="p-2 bg-primary/10 rounded-lg text-primary">
-                    <CheckCircle2 className="w-5 h-5" />
+              {/* Role Badges */}
+              <motion.div variants={fadeIn} className="grid grid-cols-2 gap-6 pt-4">
+                <div className="p-4 rounded-xl bg-primary/5 border border-primary/10 hover:border-primary/30 transition-colors hover-elevate">
+                  <div className="flex items-center gap-3 mb-2">
+                    <div className="p-2 bg-primary/20 rounded-lg text-primary">
+                      <Trophy className="w-5 h-5" />
+                    </div>
+                    <span className="font-bold text-foreground">Championship Coach</span>
                   </div>
-                  <span className="font-medium">JSS Intl. School Educator</span>
+                  <p className="text-xs text-muted-foreground">F1 in Schools Global Recognition</p>
                 </div>
-                <div className="flex items-center gap-3">
-                  <div className="p-2 bg-primary/10 rounded-lg text-primary">
-                    <CheckCircle2 className="w-5 h-5" />
+                
+                <div className="p-4 rounded-xl bg-primary/5 border border-primary/10 hover:border-primary/30 transition-colors hover-elevate">
+                  <div className="flex items-center gap-3 mb-2">
+                    <div className="p-2 bg-primary/20 rounded-lg text-primary">
+                      <Users className="w-5 h-5" />
+                    </div>
+                    <span className="font-bold text-foreground">STEM Mentor</span>
                   </div>
-                  <span className="font-medium">F1 in Schools Leader</span>
+                  <p className="text-xs text-muted-foreground">Physics Educator & Lab Developer</p>
                 </div>
-                <div className="flex items-center gap-3">
-                  <div className="p-2 bg-primary/10 rounded-lg text-primary">
-                    <CheckCircle2 className="w-5 h-5" />
+                
+                <div className="p-4 rounded-xl bg-secondary/5 border border-secondary/10 hover:border-secondary/30 transition-colors hover-elevate">
+                  <div className="flex items-center gap-3 mb-2">
+                    <div className="p-2 bg-secondary/20 rounded-lg text-secondary">
+                      <Rocket className="w-5 h-5" />
+                    </div>
+                    <span className="font-bold text-foreground">Innovation Leader</span>
                   </div>
-                  <span className="font-medium">STEM Lab Developer</span>
+                  <p className="text-xs text-muted-foreground">Engineering Challenge Designer</p>
                 </div>
-                <div className="flex items-center gap-3">
-                  <div className="p-2 bg-primary/10 rounded-lg text-primary">
-                    <CheckCircle2 className="w-5 h-5" />
+                
+                <div className="p-4 rounded-xl bg-secondary/5 border border-secondary/10 hover:border-secondary/30 transition-colors hover-elevate">
+                  <div className="flex items-center gap-3 mb-2">
+                    <div className="p-2 bg-secondary/20 rounded-lg text-secondary">
+                      <BrainCircuit className="w-5 h-5" />
+                    </div>
+                    <span className="font-bold text-foreground">Career Counselor</span>
                   </div>
-                  <span className="font-medium">Global Competition Mentor</span>
+                  <p className="text-xs text-muted-foreground">Strategic Growth Guidance</p>
                 </div>
+              </motion.div>
+            </motion.div>
+
+            {/* Right - Professional Photo */}
+            <motion.div 
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 1.0, ease: "easeOut" }}
+              className="flex flex-col items-center justify-center"
+            >
+              {/* Photo with Gold Border */}
+              <div className="relative w-full max-w-md">
+                <div className="absolute inset-0 bg-gradient-to-br from-secondary/40 to-secondary/20 rounded-3xl blur-2xl" />
+                <div className="relative p-1 bg-gradient-to-br from-secondary via-secondary/80 to-secondary/60 rounded-3xl shadow-2xl">
+                  <div className="relative rounded-3xl overflow-hidden bg-white dark:bg-slate-900 p-3">
+                    <img 
+                      src={salmanPhoto} 
+                      alt="Salman Sir" 
+                      className="w-full aspect-square object-cover rounded-2xl shadow-lg" 
+                    />
+                  </div>
+                </div>
+
+                {/* Decorative Elements */}
+                <div className="absolute -top-8 -right-8 w-24 h-24 bg-primary/10 rounded-full blur-3xl" />
+                <div className="absolute -bottom-8 -left-8 w-24 h-24 bg-secondary/10 rounded-full blur-3xl" />
+              </div>
+
+              {/* Social Media Icons */}
+              <motion.div 
+                variants={fadeIn}
+                className="flex gap-6 mt-12 justify-center"
+              >
+                <a href="#" className="p-3 rounded-full border-2 border-secondary/30 text-secondary hover:border-secondary hover:bg-secondary/10 transition-all duration-300 hover-elevate">
+                  <Instagram className="w-6 h-6" />
+                </a>
+                <a href="#" className="p-3 rounded-full border-2 border-secondary/30 text-secondary hover:border-secondary hover:bg-secondary/10 transition-all duration-300 hover-elevate">
+                  <Youtube className="w-6 h-6" />
+                </a>
+                <a href="#" className="p-3 rounded-full border-2 border-secondary/30 text-secondary hover:border-secondary hover:bg-secondary/10 transition-all duration-300 hover-elevate">
+                  <Linkedin className="w-6 h-6" />
+                </a>
               </motion.div>
             </motion.div>
           </div>
