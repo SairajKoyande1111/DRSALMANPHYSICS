@@ -428,32 +428,32 @@ export default function Home() {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
               { 
-                icon: Atom, 
+                image: imgHologram,
                 title: "Physics Teaching", 
                 desc: "Concept-based learning focusing on core principles and real-world applications."
               },
               { 
-                icon: Users, 
+                image: mentorImage,
                 title: "STEM Mentorship", 
                 desc: "Guiding students through engineering challenges and innovation projects."
               },
               { 
-                icon: Wind, 
+                image: f1Image,
                 title: "F1 in Schools", 
                 desc: "Leadership in aerodynamics, design, and team management for global competitions."
               },
               { 
-                icon: Cpu, 
+                image: labImage,
                 title: "RC Car Engineering", 
                 desc: "Hands-on design, coding, and optimization of remote-controlled vehicles."
               },
               { 
-                icon: BookOpen, 
+                image: imgQuantum,
                 title: "Career Counseling", 
                 desc: "Strategic guidance for students aiming for top engineering and science universities."
               },
               { 
-                icon: Trophy, 
+                image: imgRocketSunrise,
                 title: "Competition Prep", 
                 desc: "Rigorous training for National & World level STEM championships."
               }
@@ -465,21 +465,22 @@ export default function Home() {
                 viewport={{ once: true }}
                 transition={{ delay: idx * 0.1, duration: 0.8, ease: "easeOut" }}
               >
-                <div className="h-full relative group">
-                  <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10" />
-                  <Card className="h-full border-l-4 border-l-primary shadow-lg hover:shadow-2xl transition-all duration-500 group-hover:border-l-secondary hover:-translate-y-1 bg-white dark:bg-slate-800 border-0">
-                    <CardHeader>
-                      <div className="flex items-start justify-between mb-4">
-                        <div className="p-3 bg-primary/10 rounded-lg group-hover:bg-primary/20 transition-colors duration-300">
-                          <item.icon className="w-8 h-8 text-primary" />
-                        </div>
-                      </div>
-                      <CardTitle className="text-2xl font-black text-black dark:text-white group-hover:text-primary transition-colors duration-300">{item.title}</CardTitle>
-                    </CardHeader>
-                    <CardContent>
-                      <p className="text-foreground/75 font-medium leading-relaxed text-base">{item.desc}</p>
-                    </CardContent>
-                  </Card>
+                <div className="h-full relative group rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 min-h-80">
+                  {/* Background Image */}
+                  <img 
+                    src={item.image} 
+                    alt={item.title}
+                    className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                  
+                  {/* Dark Overlay Gradient */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-black/10 group-hover:via-black/50 transition-all duration-500" />
+                  
+                  {/* Content */}
+                  <div className="relative h-full p-8 flex flex-col justify-end">
+                    <h3 className="text-2xl font-bold text-white mb-3 group-hover:text-secondary transition-colors duration-300">{item.title}</h3>
+                    <p className="text-white/85 text-base leading-relaxed group-hover:text-white transition-colors duration-300">{item.desc}</p>
+                  </div>
                 </div>
               </motion.div>
             ))}
@@ -488,10 +489,10 @@ export default function Home() {
       </section>
 
       {/* Vision Section - Premium Professional Design */}
-      <section id="vision" className="py-12 bg-white dark:bg-white">
+      <section id="vision" className="py-20 md:py-28 bg-white dark:bg-white">
         <div className="container mx-auto px-6">
           {/* Header */}
-          <div className="text-center max-w-3xl mx-auto mb-16">
+          <div className="text-center max-w-3xl mx-auto mb-20">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -501,7 +502,7 @@ export default function Home() {
                 initial={{ opacity: 0, y: -20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                className="text-3xl lg:text-4xl font-bold font-heading mb-6 text-black dark:text-white"
+                className="text-4xl lg:text-5xl font-bold font-heading mb-8 text-black dark:text-white"
               >
                 Our <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">Vision</span>
               </motion.h2>
@@ -510,7 +511,7 @@ export default function Home() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.1 }}
-                className="text-lg md:text-xl font-semibold text-foreground leading-relaxed"
+                className="text-xl md:text-2xl font-semibold text-foreground leading-relaxed"
               >
                 Empowering students to become innovative leaders who bridge scientific knowledge with practical engineering excellence on a global stage.
               </motion.p>
@@ -518,7 +519,7 @@ export default function Home() {
           </div>
 
           {/* Vision Cards with Images */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {[
               { 
                 title: "Innovation-Driven", 
@@ -552,7 +553,7 @@ export default function Home() {
                 viewport={{ once: true }}
                 transition={{ delay: idx * 0.1, duration: 0.8, ease: "easeOut" }}
               >
-                <div className="h-full relative group rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-500">
+                <div className="h-full relative group rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 min-h-96">
                   {/* Background Image */}
                   <img 
                     src={item.image} 
@@ -564,12 +565,12 @@ export default function Home() {
                   <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-black/20 group-hover:via-black/60 transition-all duration-500" />
                   
                   {/* Content */}
-                  <div className="relative h-full p-6 flex flex-col justify-end">
-                    <div className="mb-3">
-                      <span className="text-sm font-bold text-secondary/80 tracking-widest">{item.number}</span>
+                  <div className="relative h-full p-8 flex flex-col justify-end">
+                    <div className="mb-4">
+                      <span className="text-base font-bold text-secondary/90 tracking-widest">{item.number}</span>
                     </div>
-                    <h3 className="text-xl font-bold text-white mb-2 group-hover:text-secondary transition-colors duration-300">{item.title}</h3>
-                    <p className="text-white/80 text-sm leading-relaxed group-hover:text-white transition-colors duration-300">{item.desc}</p>
+                    <h3 className="text-2xl font-bold text-white mb-3 group-hover:text-secondary transition-colors duration-300">{item.title}</h3>
+                    <p className="text-white/85 text-base leading-relaxed group-hover:text-white transition-colors duration-300">{item.desc}</p>
                   </div>
                 </div>
               </motion.div>
