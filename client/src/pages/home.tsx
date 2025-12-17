@@ -30,7 +30,7 @@ import { Badge } from "@/components/ui/badge";
 
 // Images
 import heroBg from "@assets/generated_images/abstract_physics_and_stem_background_with_green_and_yellow_gradients.png";
-import salmanPhoto from "@assets/WhatsApp_Image_2025-12-15_at_1.37.58_PM_1765786194671.jpeg";
+import salmanPhoto from "@assets/salman-sir-photo.jpg";
 // Video is served from public folder
 import f1Image from "@assets/generated_images/f1_in_schools_aerodynamic_car_design_visualization.png";
 import labImage from "@assets/generated_images/modern_stem_lab_with_robotics_projects.png";
