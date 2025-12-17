@@ -198,141 +198,142 @@ export default function Home() {
       </section>
 
       {/* About Section */}
-      <section id="about" className="py-24 bg-white dark:bg-slate-950">
+      <section id="about" className="py-20 bg-white dark:bg-slate-950">
         <div className="container mx-auto px-6">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+          {/* Centered Title */}
+          <motion.div 
+            initial={{ opacity: 0, y: -20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-4xl lg:text-5xl font-bold font-heading">
+              About <span className="text-primary">Salman Sir</span>
+            </h2>
+            <div className="h-1 w-24 bg-gradient-to-r from-primary to-secondary rounded-full mx-auto mt-4" />
+          </motion.div>
+
+          <div className="grid lg:grid-cols-2 gap-12 items-start">
             {/* Left - Professional Photo */}
             <motion.div 
-              initial={{ opacity: 0, x: -50 }}
+              initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 1.0, ease: "easeOut" }}
-              className="flex flex-col items-center justify-center order-2 lg:order-1"
+              transition={{ duration: 0.8, ease: "easeOut" }}
+              className="flex flex-col items-center"
             >
-              {/* Photo with Premium Border */}
-              <div className="relative w-full">
-                <div className="relative rounded-2xl overflow-hidden shadow-2xl">
+              {/* Photo */}
+              <div className="relative w-full max-w-sm">
+                <div className="relative rounded-xl overflow-hidden shadow-xl">
                   <img 
                     src={salmanPhoto} 
                     alt="Salman Sir" 
-                    className="w-full object-cover rounded-2xl" 
+                    className="w-full object-cover rounded-xl" 
                   />
-                  <div className="absolute inset-0 rounded-2xl border-4 border-secondary/60" />
                 </div>
-                
-                {/* Decorative accent */}
-                <div className="absolute -bottom-4 -right-4 w-32 h-32 bg-secondary/10 rounded-full blur-3xl pointer-events-none" />
               </div>
-            </motion.div>
 
-            {/* Right Content */}
-            <motion.div 
-              initial={{ opacity: 0, x: 50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 1.0, ease: "easeOut" }}
-              className="space-y-8 order-1 lg:order-2"
-            >
-              <motion.div 
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.1 }}
-                className="space-y-4"
-              >
-                <h2 className="text-5xl lg:text-6xl font-black font-heading leading-[1.2]">
-                  About{" "}
-                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">
-                    Salman Sir
-                  </span>
-                </h2>
-                <div className="h-1.5 w-32 bg-gradient-to-r from-primary to-secondary rounded-full" />
-              </motion.div>
-
+              {/* Social Media Icons with Brand Colors */}
               <motion.div 
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.2 }}
-                className="space-y-6 text-lg text-foreground leading-relaxed"
+                className="flex gap-6 mt-8 justify-center"
               >
-                <p className="font-bold text-xl">
-                  I am a passionate Physics teacher at JSS International School, Dubai, and the F1 in Schools Club Incharge with championship-winning expertise.
-                </p>
-                <p>
-                  My journey is defined by a commitment to practical learning and hands-on STEM education. As a mentor, I believe in moving beyond textbooks—guiding students through complex engineering challenges, coding aerodynamic simulations, and competing on global stages.
-                </p>
-                <p>
-                  With a track record of global recognition and award-winning achievements, I combine proven frameworks with cross-category expertise to unlock the next level of growth in every student.
-                </p>
+                <a href="#" data-testid="link-instagram" className="p-3 rounded-full bg-gradient-to-br from-[#f58529] via-[#dd2a7b] to-[#833ab4] text-white hover:shadow-lg transition-all duration-300 hover:scale-110">
+                  <Instagram className="w-5 h-5" />
+                </a>
+                <a href="#" data-testid="link-youtube" className="p-3 rounded-full bg-[#FF0000] text-white hover:shadow-lg transition-all duration-300 hover:scale-110">
+                  <Youtube className="w-5 h-5" />
+                </a>
+                <a href="#" data-testid="link-linkedin" className="p-3 rounded-full bg-[#0077B5] text-white hover:shadow-lg transition-all duration-300 hover:scale-110">
+                  <Linkedin className="w-5 h-5" />
+                </a>
+                <a href="#" data-testid="link-facebook" className="p-3 rounded-full bg-[#1877F2] text-white hover:shadow-lg transition-all duration-300 hover:scale-110">
+                  <Facebook className="w-5 h-5" />
+                </a>
               </motion.div>
+            </motion.div>
 
-              {/* Professional Credentials */}
+            {/* Right Content */}
+            <motion.div 
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, ease: "easeOut" }}
+              className="space-y-6"
+            >
+              <motion.p 
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.1 }}
+                className="text-base text-foreground leading-relaxed"
+              >
+                I am a passionate Physics teacher at JSS International School, Dubai, and the F1 in Schools Club Incharge with championship-winning expertise. My journey is defined by a commitment to practical learning and hands-on STEM education.
+              </motion.p>
+
+              <motion.p 
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.15 }}
+                className="text-base text-foreground leading-relaxed"
+              >
+                As a mentor, I believe in moving beyond textbooks. I guide students through complex engineering challenges, coding aerodynamic simulations, and competing on global stages. With a track record of global recognition and award-winning achievements.
+              </motion.p>
+
+              {/* Key Expertise Section */}
               <motion.div 
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: 0.3 }}
+                transition={{ delay: 0.2 }}
                 className="space-y-4 pt-4"
               >
-                <h3 className="text-xl font-bold text-foreground">Key Expertise:</h3>
-                <div className="grid grid-cols-1 gap-3">
+                <h3 className="text-lg font-bold text-black dark:text-white border-b-2 border-primary pb-2">
+                  Key Expertise:
+                </h3>
+                <div className="space-y-3">
                   <div className="flex items-start gap-3">
-                    <div className="mt-1 p-1.5 bg-primary/20 rounded-full text-primary flex-shrink-0">
+                    <div className="mt-1 p-2 bg-primary text-white rounded-full flex-shrink-0">
                       <Trophy className="w-4 h-4" />
                     </div>
                     <div>
-                      <p className="font-bold text-foreground">Championship Coach & Global Mentor</p>
-                      <p className="text-sm text-muted-foreground">F1 in Schools World Recognition</p>
+                      <p className="font-bold text-black dark:text-white">Championship Coach</p>
+                      <p className="text-sm text-foreground/70">F1 in Schools World Recognition</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-3">
-                    <div className="mt-1 p-1.5 bg-primary/20 rounded-full text-primary flex-shrink-0">
+                    <div className="mt-1 p-2 bg-primary text-white rounded-full flex-shrink-0">
                       <Atom className="w-4 h-4" />
                     </div>
                     <div>
-                      <p className="font-bold text-foreground">Physics & STEM Education</p>
-                      <p className="text-sm text-muted-foreground">Concept-based Learning & Innovation</p>
+                      <p className="font-bold text-black dark:text-white">Physics & STEM Education</p>
+                      <p className="text-sm text-foreground/70">Innovation & Concept-based Learning</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-3">
-                    <div className="mt-1 p-1.5 bg-secondary/20 rounded-full text-secondary flex-shrink-0">
+                    <div className="mt-1 p-2 bg-secondary text-white rounded-full flex-shrink-0">
                       <Wind className="w-4 h-4" />
                     </div>
                     <div>
-                      <p className="font-bold text-foreground">Aerodynamics & Engineering Design</p>
-                      <p className="text-sm text-muted-foreground">RC Car & F1 Technical Excellence</p>
+                      <p className="font-bold text-black dark:text-white">Aerodynamics & Design</p>
+                      <p className="text-sm text-foreground/70">RC Car & F1 Technical Excellence</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-3">
-                    <div className="mt-1 p-1.5 bg-secondary/20 rounded-full text-secondary flex-shrink-0">
+                    <div className="mt-1 p-2 bg-secondary text-white rounded-full flex-shrink-0">
                       <Users className="w-4 h-4" />
                     </div>
                     <div>
-                      <p className="font-bold text-foreground">Career Counseling & Strategy</p>
-                      <p className="text-sm text-muted-foreground">Growth & University Placement Guidance</p>
+                      <p className="font-bold text-black dark:text-white">Career Counseling</p>
+                      <p className="text-sm text-foreground/70">Growth & University Placement Guidance</p>
                     </div>
                   </div>
                 </div>
-              </motion.div>
-
-              {/* Social Media Icons */}
-              <motion.div 
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.4 }}
-                className="flex gap-4 pt-4"
-              >
-                <a href="#" data-testid="link-instagram" className="p-3 rounded-full border-2 border-secondary text-secondary hover:bg-secondary hover:text-white transition-all duration-300 hover-elevate font-bold">
-                  <Instagram className="w-5 h-5" />
-                </a>
-                <a href="#" data-testid="link-youtube" className="p-3 rounded-full border-2 border-secondary text-secondary hover:bg-secondary hover:text-white transition-all duration-300 hover-elevate font-bold">
-                  <Youtube className="w-5 h-5" />
-                </a>
-                <a href="#" data-testid="link-linkedin" className="p-3 rounded-full border-2 border-secondary text-secondary hover:bg-secondary hover:text-white transition-all duration-300 hover-elevate font-bold">
-                  <Linkedin className="w-5 h-5" />
-                </a>
               </motion.div>
             </motion.div>
           </div>
