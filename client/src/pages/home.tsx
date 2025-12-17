@@ -31,6 +31,7 @@ import { Badge } from "@/components/ui/badge";
 // Images
 import heroBg from "@assets/generated_images/abstract_physics_and_stem_background_with_green_and_yellow_gradients.png";
 import salmanPhoto from "@assets/WhatsApp_Image_2025-12-15_at_1.37.58_PM_1765786194671.jpeg";
+import heroVideo from "@assets/hero_video.mp4";
 import f1Image from "@assets/generated_images/f1_in_schools_aerodynamic_car_design_visualization.png";
 import labImage from "@assets/generated_images/modern_stem_lab_with_robotics_projects.png";
 import mentorImage from "@assets/generated_images/professional_mentorship_and_counseling_concept.png";
@@ -106,48 +107,65 @@ export default function Home() {
       </nav>
 
       {/* Hero Section */}
-      <section className="relative min-h-[90vh] flex items-center pt-20 overflow-hidden">
-        {/* Abstract Background */}
-        <div className="absolute inset-0 z-0 opacity-10">
-          <img src={heroBg} alt="Background" className="w-full h-full object-cover" />
+      <section className="relative h-screen flex items-center pt-16 overflow-hidden">
+        {/* Physics Formulas Background */}
+        <div className="absolute inset-0 z-0 opacity-[0.04] pointer-events-none overflow-hidden">
+          <div className="absolute inset-0 text-primary/80 font-mono text-sm md:text-base leading-loose whitespace-nowrap select-none" style={{ fontFamily: 'Georgia, serif' }}>
+            <div className="absolute top-[5%] left-[5%] rotate-[-5deg]">E = mc²</div>
+            <div className="absolute top-[10%] right-[15%] rotate-[8deg]">F = ma</div>
+            <div className="absolute top-[20%] left-[20%] rotate-[3deg]">v = u + at</div>
+            <div className="absolute top-[15%] right-[40%] rotate-[-3deg]">s = ut + ½at²</div>
+            <div className="absolute top-[30%] left-[8%] rotate-[6deg]">v² = u² + 2as</div>
+            <div className="absolute top-[35%] right-[10%] rotate-[-8deg]">p = mv</div>
+            <div className="absolute top-[45%] left-[35%] rotate-[4deg]">KE = ½mv²</div>
+            <div className="absolute top-[50%] right-[25%] rotate-[-4deg]">PE = mgh</div>
+            <div className="absolute top-[60%] left-[12%] rotate-[-6deg]">W = Fd cos θ</div>
+            <div className="absolute top-[65%] right-[8%] rotate-[7deg]">P = W/t</div>
+            <div className="absolute top-[75%] left-[25%] rotate-[5deg]">τ = r × F</div>
+            <div className="absolute top-[80%] right-[30%] rotate-[-5deg]">ω = θ/t</div>
+            <div className="absolute bottom-[15%] left-[45%] rotate-[3deg]">T = 2π√(l/g)</div>
+            <div className="absolute bottom-[10%] right-[45%] rotate-[-7deg]">λ = v/f</div>
+            <div className="absolute bottom-[5%] left-[10%] rotate-[8deg]">PV = nRT</div>
+            <div className="absolute bottom-[20%] right-[5%] rotate-[-3deg]">ΔQ = mcΔT</div>
+          </div>
         </div>
         
         {/* Gradient Overlay */}
-        <div className="absolute inset-0 z-0 bg-gradient-to-br from-background via-background/95 to-primary/5" />
+        <div className="absolute inset-0 z-0 bg-gradient-to-br from-background via-background/98 to-primary/5" />
 
-        <div className="container mx-auto px-6 relative z-10 grid lg:grid-cols-2 gap-12 items-center">
+        <div className="container mx-auto px-6 relative z-10 grid lg:grid-cols-2 gap-8 items-center">
           <motion.div 
             initial="hidden"
             animate="visible"
             variants={staggerContainer}
-            className="space-y-8"
+            className="space-y-4"
           >
             <motion.div variants={fadeIn}>
-              <Badge variant="outline" className="border-primary text-primary px-5 py-2 text-sm uppercase tracking-widest font-bold shadow-md">
+              <Badge variant="outline" className="border-primary text-primary px-4 py-1.5 text-xs uppercase tracking-widest font-bold shadow-md">
                 Elite Physics & STEM Mentor
               </Badge>
             </motion.div>
             
-            <motion.h1 variants={fadeIn} className="text-5xl md:text-7xl lg:text-8xl font-black font-heading leading-[1.1] tracking-tighter">
-              Transforming <br />
+            <motion.h1 variants={fadeIn} className="text-4xl md:text-5xl lg:text-6xl font-black font-heading leading-[1.1] tracking-tighter">
+              Transforming{" "}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-primary to-secondary animate-gradient-x">
                 Curious Minds
-              </span> <br />
-              Into Future <br />
+              </span>{" "}
+              Into Future{" "}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-secondary to-primary">
                 Innovators
               </span>
             </motion.h1>
             
-            <motion.p variants={fadeIn} className="text-xl md:text-2xl font-semibold text-foreground max-w-xl leading-relaxed">
+            <motion.p variants={fadeIn} className="text-lg md:text-xl font-semibold text-foreground max-w-xl leading-relaxed">
               Championship-winning F1 in Schools Coach. World-record breaker. 
               <span className="text-primary font-bold"> Dubai's premier STEM architect</span> shaping tomorrow's pioneers.
             </motion.p>
             
-            <motion.div variants={fadeIn} className="flex flex-wrap gap-5 pt-6">
+            <motion.div variants={fadeIn} className="flex flex-wrap gap-4 pt-4">
               <Button 
                 size="lg" 
-                className="text-lg font-bold px-10 h-16 bg-primary text-white hover:bg-primary/90 shadow-2xl shadow-primary/30 transition-all duration-500 hover:-translate-y-2 hover:scale-105"
+                className="text-base font-bold px-8 h-14 bg-primary text-white hover:bg-primary/90 shadow-2xl shadow-primary/30 transition-all duration-500 hover:-translate-y-2 hover:scale-105"
                 data-testid="button-explore-programs"
               >
                 Unlock Your Potential
@@ -156,7 +174,7 @@ export default function Home() {
               <Button 
                 size="lg" 
                 variant="outline" 
-                className="text-lg font-bold px-10 h-16 border-3 border-secondary text-foreground hover:bg-secondary hover:text-secondary-foreground transition-all duration-500 hover:scale-105 shadow-lg"
+                className="text-base font-bold px-8 h-14 border-3 border-secondary text-foreground hover:bg-secondary hover:text-secondary-foreground transition-all duration-500 hover:scale-105 shadow-lg"
                 data-testid="button-book-counseling"
               >
                 Start Your Journey
@@ -170,12 +188,19 @@ export default function Home() {
             transition={{ duration: 1.2, delay: 0.2, ease: "easeOut" }}
             className="relative"
           >
-            <div className="relative z-10 rounded-3xl overflow-hidden shadow-2xl border-8 border-white dark:border-zinc-800 rotate-2 hover:rotate-0 transition-transform duration-700 ease-in-out">
-              <img src={salmanPhoto} alt="Salman Sir" className="w-full max-w-md mx-auto object-cover" />
+            <div className="relative z-10 rounded-2xl overflow-hidden shadow-2xl border-4 border-white dark:border-zinc-800 rotate-1 hover:rotate-0 transition-transform duration-700 ease-in-out">
+              <video 
+                src={heroVideo} 
+                autoPlay 
+                muted 
+                loop 
+                playsInline
+                className="w-full max-w-lg mx-auto object-cover aspect-video"
+              />
             </div>
-            {/* Decorative Elements behind image */}
-            <div className="absolute top-10 -right-10 w-32 h-32 bg-secondary rounded-full blur-3xl opacity-30 z-0 animate-pulse" />
-            <div className="absolute -bottom-10 -left-10 w-40 h-40 bg-primary rounded-full blur-3xl opacity-30 z-0 animate-pulse" style={{ animationDelay: "1s" }} />
+            {/* Decorative Elements behind video */}
+            <div className="absolute top-8 -right-8 w-28 h-28 bg-secondary rounded-full blur-3xl opacity-30 z-0 animate-pulse" />
+            <div className="absolute -bottom-8 -left-8 w-36 h-36 bg-primary rounded-full blur-3xl opacity-30 z-0 animate-pulse" style={{ animationDelay: "1s" }} />
           </motion.div>
         </div>
       </section>
