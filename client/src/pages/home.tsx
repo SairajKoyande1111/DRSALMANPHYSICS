@@ -200,6 +200,26 @@ export default function Home() {
       {/* About Section */}
       <section id="about" className="pt-0 pb-12 bg-white dark:bg-white">
         <div className="container mx-auto px-6">
+          {/* Header */}
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <motion.h2 
+              initial={{ opacity: 0, y: -20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="text-3xl lg:text-4xl font-bold font-heading mb-6 text-black dark:text-white"
+            >
+              About <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">Salman Sir</span>
+            </motion.h2>
+            <motion.p 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.1 }}
+              className="text-lg md:text-xl font-semibold text-foreground leading-relaxed"
+            >
+              Championship-winning Physics educator and F1 in Schools mentor with proven expertise in practical STEM learning and global competition success.
+            </motion.p>
+          </div>
 
           <div className="grid lg:grid-cols-12 gap-12 items-start">
             {/* Left - Professional Photo */}
