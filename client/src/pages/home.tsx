@@ -198,21 +198,8 @@ export default function Home() {
       </section>
 
       {/* About Section */}
-      <section id="about" className="py-24 bg-gradient-to-b from-white to-slate-50 dark:from-slate-950 dark:to-slate-900">
+      <section id="about" className="pt-0 pb-24 bg-gradient-to-b from-white to-slate-50 dark:from-slate-950 dark:to-slate-900">
         <div className="container mx-auto px-6">
-          {/* Title */}
-          <motion.div 
-            initial={{ opacity: 0, y: -20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="text-center mb-12"
-          >
-            <h2 className="text-4xl lg:text-5xl font-bold font-heading text-black dark:text-white">
-              About <span className="text-primary">Salman Sir</span>
-            </h2>
-            <div className="h-1.5 w-32 bg-gradient-to-r from-primary to-secondary rounded-full mx-auto mt-4" />
-          </motion.div>
 
           <div className="grid lg:grid-cols-12 gap-12 items-start">
             {/* Left - Professional Photo */}
@@ -224,7 +211,7 @@ export default function Home() {
               className="lg:col-span-4 flex flex-col items-center"
             >
               {/* Photo Container with Shadow */}
-              <div className="relative w-full max-w-xs">
+              <div className="relative w-full max-w-lg">
                 <motion.div 
                   whileHover={{ y: -8 }}
                   transition={{ duration: 0.4 }}
