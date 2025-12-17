@@ -31,7 +31,7 @@ import { Badge } from "@/components/ui/badge";
 // Images
 import heroBg from "@assets/generated_images/abstract_physics_and_stem_background_with_green_and_yellow_gradients.png";
 import salmanPhoto from "@assets/WhatsApp_Image_2025-12-15_at_1.37.58_PM_1765786194671.jpeg";
-import heroVideo from "@assets/hero_video.mp4";
+// Video is served from public folder
 import f1Image from "@assets/generated_images/f1_in_schools_aerodynamic_car_design_visualization.png";
 import labImage from "@assets/generated_images/modern_stem_lab_with_robotics_projects.png";
 import mentorImage from "@assets/generated_images/professional_mentorship_and_counseling_concept.png";
@@ -107,10 +107,10 @@ export default function Home() {
       </nav>
 
       {/* Hero Section */}
-      <section className="relative h-screen flex items-center pt-16 overflow-hidden">
+      <section className="relative h-screen flex items-center pt-16 overflow-hidden bg-white dark:bg-white">
         {/* Physics Formulas Background */}
-        <div className="absolute inset-0 z-0 opacity-[0.04] pointer-events-none overflow-hidden">
-          <div className="absolute inset-0 text-primary/80 font-mono text-sm md:text-base leading-loose whitespace-nowrap select-none" style={{ fontFamily: 'Georgia, serif' }}>
+        <div className="absolute inset-0 z-0 opacity-[0.06] pointer-events-none overflow-hidden">
+          <div className="absolute inset-0 text-primary font-mono text-sm md:text-base leading-loose whitespace-nowrap select-none" style={{ fontFamily: 'Georgia, serif' }}>
             <div className="absolute top-[5%] left-[5%] rotate-[-5deg]">E = mc²</div>
             <div className="absolute top-[10%] right-[15%] rotate-[8deg]">F = ma</div>
             <div className="absolute top-[20%] left-[20%] rotate-[3deg]">v = u + at</div>
@@ -129,9 +129,6 @@ export default function Home() {
             <div className="absolute bottom-[20%] right-[5%] rotate-[-3deg]">ΔQ = mcΔT</div>
           </div>
         </div>
-        
-        {/* Gradient Overlay */}
-        <div className="absolute inset-0 z-0 bg-gradient-to-br from-background via-background/98 to-primary/5" />
 
         <div className="container mx-auto px-6 relative z-10 grid lg:grid-cols-2 gap-8 items-center">
           <motion.div 
@@ -186,21 +183,16 @@ export default function Home() {
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 1.2, delay: 0.2, ease: "easeOut" }}
-            className="relative"
+            className="relative flex justify-center"
           >
-            <div className="relative z-10 rounded-2xl overflow-hidden shadow-2xl border-4 border-white dark:border-zinc-800 rotate-1 hover:rotate-0 transition-transform duration-700 ease-in-out">
-              <video 
-                src={heroVideo} 
-                autoPlay 
-                muted 
-                loop 
-                playsInline
-                className="w-full max-w-lg mx-auto object-cover aspect-video"
-              />
-            </div>
-            {/* Decorative Elements behind video */}
-            <div className="absolute top-8 -right-8 w-28 h-28 bg-secondary rounded-full blur-3xl opacity-30 z-0 animate-pulse" />
-            <div className="absolute -bottom-8 -left-8 w-36 h-36 bg-primary rounded-full blur-3xl opacity-30 z-0 animate-pulse" style={{ animationDelay: "1s" }} />
+            <video 
+              src="/hero_video.mp4" 
+              autoPlay 
+              muted 
+              loop 
+              playsInline
+              className="h-[70vh] max-h-[600px] w-auto object-contain"
+            />
           </motion.div>
         </div>
       </section>
