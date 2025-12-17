@@ -198,141 +198,196 @@ export default function Home() {
       </section>
 
       {/* About Section */}
-      <section id="about" className="py-20 bg-white dark:bg-slate-950">
+      <section id="about" className="py-24 bg-gradient-to-b from-white to-slate-50 dark:from-slate-950 dark:to-slate-900">
         <div className="container mx-auto px-6">
-          {/* Centered Title */}
+          {/* Title */}
           <motion.div 
             initial={{ opacity: 0, y: -20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="text-center mb-16"
+            className="text-center mb-12"
           >
-            <h2 className="text-4xl lg:text-5xl font-bold font-heading">
+            <h2 className="text-4xl lg:text-5xl font-bold font-heading text-black dark:text-white">
               About <span className="text-primary">Salman Sir</span>
             </h2>
-            <div className="h-1 w-24 bg-gradient-to-r from-primary to-secondary rounded-full mx-auto mt-4" />
+            <div className="h-1.5 w-32 bg-gradient-to-r from-primary to-secondary rounded-full mx-auto mt-4" />
           </motion.div>
 
-          <div className="grid lg:grid-cols-2 gap-12 items-start">
+          <div className="grid lg:grid-cols-12 gap-12 items-start">
             {/* Left - Professional Photo */}
             <motion.div 
-              initial={{ opacity: 0, x: -30 }}
+              initial={{ opacity: 0, x: -50 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.8, ease: "easeOut" }}
-              className="flex flex-col items-center"
+              transition={{ duration: 0.9, ease: "easeOut" }}
+              className="lg:col-span-4 flex flex-col items-center"
             >
-              {/* Photo */}
-              <div className="relative w-full max-w-sm">
-                <div className="relative rounded-xl overflow-hidden shadow-xl">
-                  <img 
-                    src={salmanPhoto} 
-                    alt="Salman Sir" 
-                    className="w-full object-cover rounded-xl" 
-                  />
-                </div>
+              {/* Photo Container with Shadow */}
+              <div className="relative w-full max-w-xs">
+                <motion.div 
+                  whileHover={{ y: -8 }}
+                  transition={{ duration: 0.4 }}
+                  className="relative"
+                >
+                  <div className="absolute -inset-2 bg-gradient-to-r from-primary to-secondary rounded-2xl blur-xl opacity-20" />
+                  <div className="relative rounded-2xl overflow-hidden shadow-2xl bg-white dark:bg-slate-800">
+                    <img 
+                      src={salmanPhoto} 
+                      alt="Salman Sir" 
+                      className="w-full h-auto object-cover" 
+                    />
+                  </div>
+                </motion.div>
               </div>
 
-              {/* Social Media Icons with Brand Colors */}
+              {/* Social Media Icons */}
               <motion.div 
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: 0.2 }}
-                className="flex gap-6 mt-8 justify-center"
+                transition={{ delay: 0.3 }}
+                className="flex gap-5 mt-10"
               >
-                <a href="#" data-testid="link-instagram" className="p-3 rounded-full bg-gradient-to-br from-[#f58529] via-[#dd2a7b] to-[#833ab4] text-white hover:shadow-lg transition-all duration-300 hover:scale-110">
-                  <Instagram className="w-5 h-5" />
-                </a>
-                <a href="#" data-testid="link-youtube" className="p-3 rounded-full bg-[#FF0000] text-white hover:shadow-lg transition-all duration-300 hover:scale-110">
-                  <Youtube className="w-5 h-5" />
-                </a>
-                <a href="#" data-testid="link-linkedin" className="p-3 rounded-full bg-[#0077B5] text-white hover:shadow-lg transition-all duration-300 hover:scale-110">
-                  <Linkedin className="w-5 h-5" />
-                </a>
-                <a href="#" data-testid="link-facebook" className="p-3 rounded-full bg-[#1877F2] text-white hover:shadow-lg transition-all duration-300 hover:scale-110">
-                  <Facebook className="w-5 h-5" />
-                </a>
+                <motion.a 
+                  href="#" 
+                  data-testid="link-instagram"
+                  whileHover={{ scale: 1.15 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="w-12 h-12 rounded-full bg-gradient-to-br from-[#f58529] via-[#dd2a7b] to-[#833ab4] text-white flex items-center justify-center shadow-lg hover:shadow-xl transition-all"
+                >
+                  <Instagram className="w-6 h-6" />
+                </motion.a>
+                <motion.a 
+                  href="#" 
+                  data-testid="link-youtube"
+                  whileHover={{ scale: 1.15 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="w-12 h-12 rounded-full bg-[#FF0000] text-white flex items-center justify-center shadow-lg hover:shadow-xl transition-all"
+                >
+                  <Youtube className="w-6 h-6" />
+                </motion.a>
+                <motion.a 
+                  href="#" 
+                  data-testid="link-linkedin"
+                  whileHover={{ scale: 1.15 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="w-12 h-12 rounded-full bg-[#0077B5] text-white flex items-center justify-center shadow-lg hover:shadow-xl transition-all"
+                >
+                  <Linkedin className="w-6 h-6" />
+                </motion.a>
+                <motion.a 
+                  href="#" 
+                  data-testid="link-facebook"
+                  whileHover={{ scale: 1.15 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="w-12 h-12 rounded-full bg-[#1877F2] text-white flex items-center justify-center shadow-lg hover:shadow-xl transition-all"
+                >
+                  <Facebook className="w-6 h-6" />
+                </motion.a>
               </motion.div>
             </motion.div>
 
             {/* Right Content */}
             <motion.div 
-              initial={{ opacity: 0, x: 30 }}
+              initial={{ opacity: 0, x: 50 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.8, ease: "easeOut" }}
-              className="space-y-6"
+              transition={{ duration: 0.9, ease: "easeOut" }}
+              className="lg:col-span-8 space-y-8"
             >
-              <motion.p 
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.1 }}
-                className="text-base text-foreground leading-relaxed"
-              >
-                I am a passionate Physics teacher at JSS International School, Dubai, and the F1 in Schools Club Incharge with championship-winning expertise. My journey is defined by a commitment to practical learning and hands-on STEM education.
-              </motion.p>
+              {/* Bio Text */}
+              <div className="space-y-4">
+                <motion.p 
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: 0.15 }}
+                  className="text-lg text-foreground leading-relaxed"
+                >
+                  I am a passionate Physics teacher at JSS International School, Dubai, and the F1 in Schools Club Incharge with championship-winning expertise. My journey is defined by a commitment to practical learning and hands-on STEM education.
+                </motion.p>
 
-              <motion.p 
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.15 }}
-                className="text-base text-foreground leading-relaxed"
-              >
-                As a mentor, I believe in moving beyond textbooks. I guide students through complex engineering challenges, coding aerodynamic simulations, and competing on global stages. With a track record of global recognition and award-winning achievements.
-              </motion.p>
+                <motion.p 
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: 0.25 }}
+                  className="text-lg text-foreground leading-relaxed"
+                >
+                  As a mentor, I believe in moving beyond textbooks. I guide students through complex engineering challenges, coding aerodynamic simulations, and competing on global stages. With a track record of global recognition and award-winning achievements, I combine proven frameworks with cross-category expertise to unlock the next level of growth in every student.
+                </motion.p>
+              </div>
 
               {/* Key Expertise Section */}
               <motion.div 
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: 0.2 }}
-                className="space-y-4 pt-4"
+                transition={{ delay: 0.35 }}
+                className="space-y-6 pt-6 border-t-2 border-primary/20"
               >
-                <h3 className="text-lg font-bold text-black dark:text-white border-b-2 border-primary pb-2">
+                <h3 className="text-2xl font-bold text-black dark:text-white flex items-center gap-3">
+                  <span className="w-1 h-8 bg-gradient-to-b from-primary to-secondary rounded-full" />
                   Key Expertise:
                 </h3>
-                <div className="space-y-3">
-                  <div className="flex items-start gap-3">
-                    <div className="mt-1 p-2 bg-primary text-white rounded-full flex-shrink-0">
-                      <Trophy className="w-4 h-4" />
+                
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+                  {/* Expertise Item 1 */}
+                  <motion.div 
+                    whileHover={{ y: -4 }}
+                    className="flex items-start gap-4 p-4 rounded-xl bg-gradient-to-br from-teal-50 to-teal-50/50 dark:from-teal-900/20 dark:to-teal-900/10 border border-teal-200/50 dark:border-teal-700/30"
+                  >
+                    <div className="p-3 bg-teal-500 text-white rounded-full flex-shrink-0 shadow-lg">
+                      <Trophy className="w-5 h-5" />
                     </div>
                     <div>
-                      <p className="font-bold text-black dark:text-white">Championship Coach</p>
-                      <p className="text-sm text-foreground/70">F1 in Schools World Recognition</p>
+                      <p className="font-bold text-black dark:text-white text-sm">Championship Coach</p>
+                      <p className="text-xs text-foreground/70 mt-1">F1 in Schools World Recognition</p>
                     </div>
-                  </div>
-                  <div className="flex items-start gap-3">
-                    <div className="mt-1 p-2 bg-primary text-white rounded-full flex-shrink-0">
-                      <Atom className="w-4 h-4" />
-                    </div>
-                    <div>
-                      <p className="font-bold text-black dark:text-white">Physics & STEM Education</p>
-                      <p className="text-sm text-foreground/70">Innovation & Concept-based Learning</p>
-                    </div>
-                  </div>
-                  <div className="flex items-start gap-3">
-                    <div className="mt-1 p-2 bg-secondary text-white rounded-full flex-shrink-0">
-                      <Wind className="w-4 h-4" />
+                  </motion.div>
+
+                  {/* Expertise Item 2 */}
+                  <motion.div 
+                    whileHover={{ y: -4 }}
+                    className="flex items-start gap-4 p-4 rounded-xl bg-gradient-to-br from-blue-50 to-blue-50/50 dark:from-blue-900/20 dark:to-blue-900/10 border border-blue-200/50 dark:border-blue-700/30"
+                  >
+                    <div className="p-3 bg-blue-500 text-white rounded-full flex-shrink-0 shadow-lg">
+                      <Atom className="w-5 h-5" />
                     </div>
                     <div>
-                      <p className="font-bold text-black dark:text-white">Aerodynamics & Design</p>
-                      <p className="text-sm text-foreground/70">RC Car & F1 Technical Excellence</p>
+                      <p className="font-bold text-black dark:text-white text-sm">Physics & STEM Education</p>
+                      <p className="text-xs text-foreground/70 mt-1">Innovation & Concept-based Learning</p>
                     </div>
-                  </div>
-                  <div className="flex items-start gap-3">
-                    <div className="mt-1 p-2 bg-secondary text-white rounded-full flex-shrink-0">
-                      <Users className="w-4 h-4" />
+                  </motion.div>
+
+                  {/* Expertise Item 3 */}
+                  <motion.div 
+                    whileHover={{ y: -4 }}
+                    className="flex items-start gap-4 p-4 rounded-xl bg-gradient-to-br from-amber-50 to-amber-50/50 dark:from-amber-900/20 dark:to-amber-900/10 border border-amber-200/50 dark:border-amber-700/30"
+                  >
+                    <div className="p-3 bg-amber-500 text-white rounded-full flex-shrink-0 shadow-lg">
+                      <Wind className="w-5 h-5" />
                     </div>
                     <div>
-                      <p className="font-bold text-black dark:text-white">Career Counseling</p>
-                      <p className="text-sm text-foreground/70">Growth & University Placement Guidance</p>
+                      <p className="font-bold text-black dark:text-white text-sm">Aerodynamics & Design</p>
+                      <p className="text-xs text-foreground/70 mt-1">RC Car & F1 Technical Excellence</p>
                     </div>
-                  </div>
+                  </motion.div>
+
+                  {/* Expertise Item 4 */}
+                  <motion.div 
+                    whileHover={{ y: -4 }}
+                    className="flex items-start gap-4 p-4 rounded-xl bg-gradient-to-br from-green-50 to-green-50/50 dark:from-green-900/20 dark:to-green-900/10 border border-green-200/50 dark:border-green-700/30"
+                  >
+                    <div className="p-3 bg-green-500 text-white rounded-full flex-shrink-0 shadow-lg">
+                      <Users className="w-5 h-5" />
+                    </div>
+                    <div>
+                      <p className="font-bold text-black dark:text-white text-sm">Career Counseling</p>
+                      <p className="text-xs text-foreground/70 mt-1">Growth & University Placement Guidance</p>
+                    </div>
+                  </motion.div>
                 </div>
               </motion.div>
             </motion.div>
